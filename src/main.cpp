@@ -11,7 +11,6 @@ void setup() {
 }
 
 void loop() {
-  
   // Read temperature
   int16_t subtemp_raw = analogRead(SUBTEMP_PIN);
 
@@ -20,9 +19,6 @@ void loop() {
   float subtemp_degC = (subtemp_raw & mask) / 16.0;
 
   // Print raw and converted values
-  Serial.print("Raw value: ");
-  Serial.println(subtemp_raw, BIN);
-  Serial.print("Deg C: ");
   Serial.println(subtemp_degC, 4);
   delay(1000);
 }
